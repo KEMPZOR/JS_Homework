@@ -7,7 +7,7 @@
  "Насыпаем в миску (количество гр.) корма."
  "Количество гр." получаем с помощью метода formatFoodAmount.
  Вывести в консоль результат выполнения метода feed.
- */
+*/
 
 function Cat(name) {
     this.name = name;
@@ -40,7 +40,7 @@ function Cat(name) {
     var foodAmount = 50;
 
     this.feed = function () {
-        return 'Насыпаем в миску ' + formatFoodAmount() + ' корма.';
+        return 'Насыпаем в миску ' + this.dailyNorm() + ' корма.';
     }
 
     this.dailyNorm = function(amount) {
