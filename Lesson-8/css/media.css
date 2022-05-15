@@ -42,6 +42,9 @@
   .header-bottom {
     display: none;
   }
+  .main-container__page {
+    grid-template-columns: 1fr;
+  }
   .main-sidebar {
     display: none;
   }

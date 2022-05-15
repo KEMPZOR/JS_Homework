@@ -51,9 +51,9 @@ body {
   min-width: 320px;
   position: relative;
   margin: 0;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 h1 {
@@ -67,6 +67,7 @@ img {
 }
 
 .container {
+  max-width: 100%;
   width: 960px;
   margin-right: auto;
   margin-left: auto;
@@ -194,7 +195,7 @@ img {
   padding: 0 10px;
 }
 
-.header-top__icons-envelope span{
+.header-top__icons-envelope span {
   position: absolute;
   top: -8px;
   right: -1px;
@@ -222,6 +223,7 @@ img {
 
 .header-bottom {
   background-color: var(--pigeon-blue);
+  height: 40px;
 }
 
 .navbar {
@@ -258,27 +260,25 @@ img {
 
 .navbar__menu-item a {
   display: block;
-  padding: 10px;
+  padding: 8px;
   color: var(--light-div);
   text-decoration: none;
 }
 
-.main-content {
-  flex: 1 0 auto;
-  width: 100%;
-}
-
 .main-container__page {
-  display: flex;
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  grid-template-areas: "nav main" "nav footer";
+  grid-template-rows: 1fr;
   background-color: var(--light-div);
   box-shadow: 0 3px 10px var(--manatee);
-  padding-right: 0;
+  flex: 1 0 auto;
 }
 
 .main-sidebar {
-  width: 20%;
   padding: 10px 10px 10px 20px;
   border-right: solid #e0e4ed 1px;
+  grid-area: nav;
 }
 
 .main-sidebar__title {
@@ -308,7 +308,7 @@ img {
   content: "";
   position: absolute;
   width: 4px;
-  height: 31px;
+  height: auto;
   background-color: #99a1b3;
   left: -13px;
   top: 0;
@@ -319,8 +319,9 @@ img {
 }
 
 .main-section {
-  width: 80%;
   position: relative;
+  grid-area: main;
+  background-color: var(--light-div);
 }
 
 .main-section__heading {
@@ -491,6 +492,7 @@ img {
   font-weight: 600;
   top: 0;
   left: 0;
+  padding-right: 5px;
 }
 
 .main-section__content-tag a {
@@ -501,7 +503,7 @@ img {
 
 .main-section__pagination {
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 70px;
 }
 
 .main-section__pagination-button {
@@ -535,11 +537,7 @@ img {
 .footer {
   background-color: var(--light-bg);
   color: var(--manatee);
-  padding: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  grid-area: footer;
 }
 
 .main-footer__nav {
