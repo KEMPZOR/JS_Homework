@@ -19,7 +19,7 @@ Animal.prototype.feed = function() {
 }
 
 Animal.prototype.dailyNorm = function(amount) {
-    if (!arguments.length) return Animal.prototype._formatFoodAmount.apply(this);
+    if (!arguments.length) return this._formatFoodAmount();
 
     if (amount < 50 || amount > 100) {
         throw new Error('Значение должно быть не меньше 50 гр. или не больше 100 гр.');
