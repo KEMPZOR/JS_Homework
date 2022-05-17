@@ -23,7 +23,7 @@ function Animal(name) {
 
     self.feed = function() {
         console.log('Насыпаем в миску ' + self.dailyNorm() + ' корма.');
-    }
+    };
 
     self.dailyNorm = function(amount) {
         if (!arguments.length) return formatFoodAmount();
@@ -33,7 +33,7 @@ function Animal(name) {
         }
 
         foodAmount = amount;
-    }
+    };
 
     function formatFoodAmount() {
         return foodAmount + ' гр.';
@@ -50,12 +50,12 @@ function Cat(name) {
         animalFeed();
         console.log('Кот доволен ^_^');
         return this;
-    }
+    };
 
     this.stroke = function() {
-        console.log('Гладим кота');
+        console.log('Гладим кота.');
         return this;
-    }
+    };
 }
 
 var mandarin = new Cat('Mandarin');
