@@ -51,6 +51,9 @@
   .main-section {
     width: 100%;
   }
+  .main-section__heading {
+    text-align: center;
+  }
   .main-section__search form {
     display: none;
   }
