@@ -48,7 +48,6 @@ function checkNumberArr(arr) {
     });
 
     return number;
-     
 }
  
 checkNumberArr([-1, 0, 2, 34, -2]);
@@ -61,7 +60,6 @@ function checkNumberArr(arr) {
     })[0];
 
     return number;
-     
 }
  
 checkNumberArr([-1, 0, 2, 34, -2]);
