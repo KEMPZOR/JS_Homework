@@ -154,38 +154,26 @@ divideArr([1, 2, 3, 4], 1);
 
 // Вариант 1
 function degreeTwo(number) {
-    var sum = 2,
-        num = typeof(number) === 'number';
+    var sum = 2;
 
-    while (num) {
+    while (number) {
 
         if (sum >= number) {
             break;
         }
 
         sum *= 2;
-    }
+    } 
 
     return (sum == number) ? true : false;
 }
 
 degreeTwo(1125899906842624);
 
+
 // Вариант 2
 function degreeTwo(number) {
-    var i = 0,
-        sum = 2;
-
-    while (number) {
-        sum = Math.pow(2, i++);
-
-        if (sum >= number) {
-            break;
-        }
-
-    }
-
-    return (sum == number) ? true : false;
+    return (Math.pow(2, Math.log2(number)) === number) ? true : false;
 }
 
 degreeTwo(1125899906842624);
