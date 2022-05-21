@@ -35,6 +35,7 @@ function filterNumbersArr(numbers) {
 
 filterNumbersArr([-1, 0, 2, 34, -2]);
 
+
 /*
 Задание 2:
  Написать функцию, принимающую массив чисел и возвращающую первое найденное положительное число.
@@ -64,6 +65,7 @@ function checkNumberArr(arr) {
  
 checkNumberArr([-1, 0, 2, 34, -2]);
 
+
 /*
 Задание 3:
  Написать функцию, которая будет определять, является ли переданное в нее слово палиндромом (напр. шалаш).
@@ -90,6 +92,7 @@ function isPalindrome(str) {
 
 isPalindrome('А роза упала на лапу Азора');
 
+
 /*
 Задание 4:
  Написать функцию, которая будет определять, являются ли переданные в нее слова анаграммами (напр. кот и отк).
@@ -106,6 +109,7 @@ function areAnagrams(str, strAnagram) {
 }
 
 areAnagrams('кот','Отк');
+
 
 /*
 Задание 5:
@@ -141,3 +145,26 @@ function divideArr(arr, interval) {
 }
 
 divideArr([1, 2, 3, 4], 1);
+
+
+/*
+Задание 6 *:
+ Написать функцию, определяющую, является ли переданное в нее число степенью двойки.
+*/
+
+function degreeTwo(number) {
+    var i = 0,
+        sum = 2;
+
+    while (number) {
+        if (sum == number || number < sum) {
+            break;
+        }
+        sum *= 2;
+        i++;
+    }
+
+    return (sum == number) ? true : false;
+}
+
+degreeTwo(1125899906842624);
