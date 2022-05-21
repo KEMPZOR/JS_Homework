@@ -152,16 +152,37 @@ divideArr([1, 2, 3, 4], 1);
  Написать функцию, определяющую, является ли переданное в нее число степенью двойки.
 */
 
+// Вариант 1
+function degreeTwo(number) {
+    var sum = 2,
+        num = typeof(number) === 'number';
+
+    while (num) {
+
+        if (sum >= number) {
+            break;
+        }
+
+        sum *= 2;
+    }
+
+    return (sum == number) ? true : false;
+}
+
+degreeTwo(1125899906842624);
+
+// Вариант 2
 function degreeTwo(number) {
     var i = 0,
         sum = 2;
 
     while (number) {
-        if (sum == number || number < sum) {
+        sum = Math.pow(2, i++);
+
+        if (sum >= number) {
             break;
         }
-        sum *= 2;
-        i++;
+
     }
 
     return (sum == number) ? true : false;
