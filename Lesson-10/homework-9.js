@@ -20,14 +20,9 @@
 */
 
 function filterNumbersArr(numbers) {
-    var newArr = [];
 
-    numbers.forEach(function(value) {
-
-        if (value > 0) {
-            newArr[newArr.length] = value;
-        }
-
+    var newArr = numbers.filter(function(value) {
+        return value > 0;
     });
 
     return newArr;
@@ -154,7 +149,7 @@ divideArr([1, 2, 3, 4], 1);
 
 // Вариант 1
 function degreeTwo(number) {
-    var sum = 2;
+    var sum = 1;
 
     while (number) {
 
@@ -163,9 +158,9 @@ function degreeTwo(number) {
         }
 
         sum *= 2;
-    } 
+    }
 
-    return (sum == number) ? true : false;
+    return (sum == number) || false;
 }
 
 degreeTwo(1125899906842624);
