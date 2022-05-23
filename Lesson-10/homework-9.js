@@ -168,7 +168,7 @@ degreeTwo(1125899906842624);
 
 // Вариант 2
 function degreeTwo(number) {
-    return (Math.pow(2, Math.log2(number)) === number) ? true : false;
+    return (Math.pow(2, Math.floor(Math.log2(number))) === number) || false;
 }
 
 degreeTwo(1125899906842624);
