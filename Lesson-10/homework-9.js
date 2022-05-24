@@ -160,7 +160,7 @@ function degreeTwo(number) {
         sum *= 2;
     }
 
-    return (sum == number) || false;
+    return sum == number;
 }
 
 degreeTwo(1125899906842624);
@@ -168,7 +168,7 @@ degreeTwo(1125899906842624);
 
 // Вариант 2
 function degreeTwo(number) {
-    return (Math.pow(2, Math.floor(Math.log2(number))) === number) || false;
+    return Math.pow(2, Math.floor(Math.log2(number))) === number;
 }
 
 degreeTwo(1125899906842624);
