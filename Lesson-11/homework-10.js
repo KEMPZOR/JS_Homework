@@ -7,11 +7,11 @@
 
 function namesToObject(names) {
 
-    names.map(function(item, i, arr){
-        arr[i] = {name: item};
+    var newArr = names.map(function(item) {
+        return {name: item};
     });
-    
-    return names;
+
+    return newArr;
 }
 
 namesToObject(['Vasya', 'Petya', 'Oleg']);
@@ -44,14 +44,14 @@ currentTime(['00', '13', '24']);
 function vowelsLength(str) {
     var vowels = ['а', 'о', 'у', 'ы', 'э', 'я', 'ё', 'ю', 'и', 'е'];
     str = str.toLowerCase().split('');
-    
-    var result = str.filter(function(item){
-        return item == vowels.filter(function(vowel){
+
+    var result = str.filter(function(item) {
+        return vowels.find(function(vowel) {
             return item == vowel;
         });
     });
 
-    return result.length;   
+    return result.length;
 }
 
 vowelsLength('Гласные, не согласные, но прекрасные');
@@ -73,19 +73,51 @@ vowelsLength('Гласные, не согласные, но прекрасные
 */
 
 function countSentencesLetters(str) {
-    var newStr = '';
+    var result,
+        text = '';
 
-    var result = str.split('').reduce(function(prev, current, i, arr){
+    result = str.split('').reduce(function(prev, current, i, arr){
         return (arr[i - 1] != current) ?  prev + current : prev;
     }).split(/[.!?]+/);
 
-    result.forEach(function(item){
+    result.forEach(function(item) {
+
         if (item.length) {
-            newStr += item.trim() + ': Letters quantity is: ' + item.split(/[, ]+/).join('').length + '\n';
+            text += item.trim() + ': Letters quantity is: ' + item.split(/[, ]+/).join('').length + '\n';
         }
+
     });
-    
-    return alert(newStr);
+
+    return alert(text);
 }
 
-countSentencesLetters('Привет, студент!!!!!! Студент... Как дела, студент?');
+countSentencesLetters('Привет, студент! Студент... Как дела, студент?');
+
+/*
+Задание 5 *:
+ Написать функцию, которая будет находить в переданном ей тексте первое наиболее часто повторяемое слово и возвращать
+ информацию вида:
+     "Максимальное число повторений у слова "привет" - 8"
+ Для удобного разделения текста на слова сразу по нескольким знакам препинания - разрешается использовать регулярное
+ выражение в методе split.
+*/
+
+function countDuplicateWord(str) {
+    var arrWords = str.toLowerCase().split(/[\s.,!?]/g),
+        obj;
+
+    obj = arrWords.filter(function(item) {
+        return item.length > 0;
+    }).reduce(function(item, value) {
+        item[value] = (item[value] || 0) + 1;
+        return item;
+    },{});
+
+    var result = Object.keys(obj).sort(function(a, b) {
+        return obj[b] - obj[a];
+    });
+
+    return 'Максимальное число повторений у слова "' + result[0] + '" - ' + obj[result[0]];
+}
+
+countDuplicateWord('Привет, символов, символов количество количество количество количество пример пример пример.');
