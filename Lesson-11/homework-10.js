@@ -76,7 +76,7 @@ function countSentencesLetters(str) {
     var result,
         text = '';
 
-    result = str.split('').reduce(function(prev, current, i, arr){
+    result = str.split('').reduce(function(prev, current, i, arr) {
         return (arr[i - 1] != current) ?  prev + current : prev;
     }).split(/[.!?]+/);
 
