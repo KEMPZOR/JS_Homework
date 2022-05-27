@@ -29,8 +29,8 @@ parTwo.onclick = function(e) {
         if (!localStorage.getItem(target.textContent)) {
 
             localStorage.setItem(target.textContent, JSON.stringify({
-                path: target.href}
-            ));
+                path: target.href
+            }));
 
             target.href = '#';
             alert('Ссылка сохранена');
