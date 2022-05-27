@@ -4,8 +4,8 @@ var container = document.getElementsByClassName('container')[0],
     parTwo = document.createElement('p');
 
 
-parOne.innerHTML = 'Первый текст и <a href="/gallery">ссылка</a> внутри <a href="/portfolio">ссылка 2</a>';
-parTwo.innerHTML = 'Второй текст и <a href="/gallery">ссылка</a> внутри <a href="/portfolio">ссылка 2</a>';
+parOne.innerHTML = 'Первый текст и <a href="https://craftmebel.by/">ссылка</a> внутри <a href="https://www.onliner.by/">ссылка 2</a>';
+parTwo.innerHTML = 'Второй текст и <a href="https://www.google.com/">ссылка</a> внутри <a href="https://mebel-market.by/">ссылка 2</a>';
 
 container.appendChild(parOne);
 container.appendChild(parTwo);
