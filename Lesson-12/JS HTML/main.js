@@ -1,5 +1,5 @@
-var container = document.getElementsByClassName('container')[0],
-    button = document.getElementsByClassName('button')[0],
+var container = document.getElementById('container'),
+    button = document.getElementsByTagName('button')[0],
     parOne = document.createElement('p'),
     parTwo = document.createElement('p');
 
