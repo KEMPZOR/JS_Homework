@@ -27,7 +27,7 @@ function buttonValidate(e) {
 
     for (var i = 0; i < input.length; i++) {
 
-        if (!+input[i].value || +input[i].value > 10) {
+        if (!+input[i].value || +input[i].value < 1 || +input[i].value > 10) {
             alert('Введите корректное значение в поле ' + input[i].previousElementSibling.textContent + ' целое число от 1 до 10');
             input[i].value = '';
             button.disabled = true;
@@ -40,6 +40,7 @@ function buttonValidate(e) {
 }
 
 function addTableChees([columnY, rowsX]) {
+
     var body = document.getElementsByTagName('body')[0],
         tableInner = '';
 
