@@ -72,10 +72,12 @@ function deepCompare(obj1, obj2) {
     }
 
     if ((typeof obj1 === 'object' && obj1 !== null) && (typeof obj2 === 'object' && obj2 !== null)) {
+
+        
         if (Object.keys(obj1).length !== Object.keys(obj2).length) {
             return false;
         }
-        
+
         for (var key in obj1) {
             if (!deepCompare(obj1[key], obj2[key])) {
                 return false;
@@ -85,7 +87,15 @@ function deepCompare(obj1, obj2) {
         return true;
     }
 
+    if (typeof obj1 === 'function' && typeof obj2 === 'function') {
+
+        if (obj1.toString() === obj2.toString()) {
+            return true;
+        }        
+
+    }
+
     return false;
 }
-  
+
 deepCompare(initialObj, clonedObj);
